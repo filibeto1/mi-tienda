@@ -617,3 +617,165 @@
     font-size: 3rem;
   }
 }
+/* Filtros */
+.filtros-container {
+  background: #0a0a0a;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  border: 1px solid #222;
+}
+
+.filtros-container h3 {
+  margin: 0;
+  color: #ff6600;
+  font-size: 1.1rem;
+}
+
+.filtro-input, .filtro-select {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  min-width: 150px;
+}
+
+.filtro-input:focus, .filtro-select:focus {
+  outline: none;
+  border-color: #ff6600;
+}
+
+.filtro-precio {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.filtro-precio span {
+  color: #ff6600;
+}
+
+.btn-limpiar {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-limpiar:hover {
+  background: #ff6600;
+}
+
+@media (max-width: 768px) {
+  .filtros-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filtro-input, .filtro-select {
+    width: 100%;
+  }
+  
+  .filtro-precio {
+    flex-direction: row;
+  }
+}
+/* Filtros simplificados */
+.filtros-container {
+  background: #0a0a0a;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  border: 1px solid #222;
+}
+
+.filtros-fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.filtro-busqueda {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0 10px;
+  flex: 2;
+  min-width: 200px;
+}
+
+.filtro-icono {
+  color: #ff6600;
+  font-size: 1rem;
+}
+
+.filtro-input {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+}
+
+.filtro-input::placeholder {
+  color: #666;
+}
+
+.filtro-select {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  flex: 1;
+  min-width: 150px;
+}
+
+.filtro-select:focus {
+  outline: none;
+  border-color: #ff6600;
+}
+
+.btn-limpiar {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+.btn-limpiar:hover {
+  background: #ff6600;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .filtros-fila {
+    flex-direction: column;
+  }
+  
+  .filtro-busqueda,
+  .filtro-select,
+  .btn-limpiar {
+    width: 100%;
+  }
+}
