@@ -79,24 +79,22 @@ export const TiendaProvider = ({ children }) => {
   };
 
   // CRUD para Productos
-  const agregarProducto = async (tipoId, producto) => {
-    const nuevoProducto = {
-      ...producto,
-      id: Date.now().toString()
-    };
-    
-    try {
-      console.log('Agregando producto:', nuevoProducto);
-      const response = await api.post(`/tipos/${tipoId}/productos`, nuevoProducto);
-      setTipos(prev => prev.map(tipo => 
-        tipo.id === tipoId ? response.data : tipo
-      ));
-    } catch (error) {
-      console.error('Error creando producto:', error);
-      setError(error.message);
-      throw error;
-    }
+const agregarProducto = async (tipoId, producto) => {
+  const nuevoProducto = {
+    ...producto,
+    id: Date.now().toString()
   };
+  
+  try {
+    console.log('Agregando producto:', nuevoProducto);
+    const response = await api.post(`/tipos/${tipoId}/productos`, nuevoProducto);
+    setTipos(prev => prev.map(tipo => 
+      tipo.id === tipoId ? response.data : tipo
+    ));
+  } catch (error) {
+    console.error('Error creando producto:', error);
+  }
+};
 
   const editarProducto = async (tipoId, productoId, productoActualizado) => {
     try {
