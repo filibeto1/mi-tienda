@@ -1,0 +1,619 @@
+.tienda-container {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.tienda-header {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  margin-bottom: 60px;
+}
+
+.tienda-header h1 {
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, #ff6600, #ffaa33);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.tienda-header p {
+  color: #aaa;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Estilos para los botones de tipos */
+.tipos-botones-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.tipo-boton-cliente {
+  background: linear-gradient(135deg, #111, #1a1a1a);
+  border: 2px solid #333;
+  border-radius: 20px;
+  padding: 40px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  min-height: 220px;
+  position: relative;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.tipo-boton-cliente span {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tipo-boton-cliente:hover {
+  transform: translateY(-5px);
+  border-color: #ff6600;
+  box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+}
+
+.tipo-icono-cliente {
+  font-size: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.tipo-nombre-cliente {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff6600;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tipo-cantidad-cliente {
+  font-size: 0.9rem;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* Vista de productos por tipo */
+.productos-por-tipo-container {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.header-productos {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.btn-regresar {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.btn-regresar:hover {
+  background: #ff6600;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.titulo-categoria {
+  font-size: 2.5rem;
+  color: #ff6600;
+  margin: 0 0 10px 0;
+}
+
+.contador-productos {
+  color: #aaa;
+  margin: 0;
+}
+
+/* Grid de productos */
+.productos-grid-tienda {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.producto-card-clickeable {
+  background: #111;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #222;
+}
+
+.producto-card-clickeable:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+  border-color: #ff6600;
+}
+
+.producto-imagen-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.producto-imagen-tienda {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.producto-card-clickeable:hover .producto-imagen-tienda {
+  transform: scale(1.05);
+}
+
+.producto-imagen-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: #1a1a1a;
+  color: #666;
+}
+
+.producto-info {
+  padding: 20px;
+}
+
+.producto-nombre-tienda {
+  font-size: 1.3rem;
+  color: #ffaa33;
+  margin: 0 0 5px 0;
+}
+
+.producto-marca-tienda {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0 0 10px 0;
+}
+
+.producto-precio-tienda {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff6600;
+  margin: 10px 0;
+}
+
+.producto-stock-tienda {
+  margin: 10px 0;
+}
+
+.stock-disponible {
+  color: #66ff66;
+  font-size: 0.9rem;
+}
+
+.stock-agotado {
+  color: #ff4444;
+  font-size: 0.9rem;
+}
+
+.ver-detalle {
+  color: #ff6600;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 15px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.producto-card-clickeable:hover .ver-detalle {
+  opacity: 1;
+}
+
+/* Producto card para tienda */
+.producto-tienda-card {
+  background: #0a0a0a;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #222;
+  transition: all 0.2s;
+  margin-bottom: 15px;
+}
+
+.producto-tienda-card:hover {
+  border-color: #ff6600;
+  transform: translateY(-2px);
+}
+
+.producto-imagen {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.producto-nombre {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffaa33;
+  margin: 10px 0 5px;
+}
+
+.producto-marca {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.producto-precio {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6600;
+  margin: 10px 0;
+}
+
+.producto-stock {
+  color: #66ff66;
+  font-size: 0.9rem;
+}
+
+.producto-descripcion {
+  color: #aaa;
+  font-size: 0.85rem;
+  margin: 8px 0;
+}
+
+/* Estilos para tallas */
+.producto-tallas {
+  margin: 10px 0;
+  padding: 10px;
+  background: #0a0a0a;
+  border-radius: 8px;
+}
+
+.talla-badge {
+  background: #1a1a1a;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  border: 1px solid #ff6600;
+  color: #ffaa33;
+}
+
+.tallas-detalle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.talla-detalle-item {
+  background: #1a1a1a;
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  border: 1px solid #333;
+}
+
+.talla-nombre {
+  font-weight: bold;
+  color: #ff6600;
+  font-size: 1.1rem;
+}
+
+.talla-cantidad {
+  color: #66ff66;
+}
+
+/* Estilos para tallas con colores */
+.talla-color-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #1a1a1a;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid #ff6600;
+}
+
+.talla-size {
+  font-weight: bold;
+  color: #ffaa33;
+}
+
+.talla-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.talla-color-muestra {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.talla-color-nombre {
+  color: #ccc;
+  min-width: 60px;
+}
+
+/* Modal de detalle grande */
+.modal-detalle-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-detalle-content {
+  background: #111;
+  border-radius: 20px;
+  max-width: 1200px;
+  width: 95%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1px solid #ff6600;
+  animation: modalEntrada 0.3s ease;
+}
+
+@keyframes modalEntrada {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-detalle-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+.modal-detalle-close:hover {
+  background: #ff4444;
+  transform: scale(1.1);
+}
+
+.modal-detalle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
+}
+
+.modal-detalle-imagen {
+  background: #0a0a0a;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.modal-detalle-imagen img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.no-imagen-grande {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.modal-detalle-info {
+  padding: 20px;
+}
+
+.detalle-nombre {
+  font-size: 2rem;
+  color: #ffaa33;
+  margin: 0 0 10px 0;
+}
+
+.detalle-marca {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.detalle-precio-stock {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.detalle-precio {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff6600;
+}
+
+.detalle-stock {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.stock-positivo {
+  color: #66ff66;
+}
+
+.stock-negativo {
+  color: #ff4444;
+}
+
+.detalle-seccion {
+  margin-bottom: 25px;
+}
+
+.detalle-seccion h3 {
+  color: #ff6600;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.detalle-seccion p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.detalle-caracteristicas {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.caracteristica {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  background: #0a0a0a;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.caracteristica-icono {
+  font-size: 2rem;
+}
+
+.caracteristica strong {
+  display: block;
+  color: #ffaa33;
+  margin-bottom: 5px;
+}
+
+.caracteristica p {
+  color: #ccc;
+  margin: 0;
+}
+
+.empty-state,
+.empty-productos {
+  text-align: center;
+  padding: 60px 20px;
+  color: #888;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-detalle-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .modal-detalle-imagen {
+    min-height: 250px;
+  }
+
+  .modal-detalle-imagen img {
+    max-height: 300px;
+  }
+
+  .detalle-nombre {
+    font-size: 1.5rem;
+  }
+
+  .detalle-precio {
+    font-size: 2rem;
+  }
+
+  .btn-regresar {
+    position: static;
+    transform: none;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+
+  .header-productos {
+    text-align: center;
+  }
+
+  .titulo-categoria {
+    font-size: 1.8rem;
+  }
+
+  .tipos-botones-container {
+    grid-template-columns: 1fr;
+  }
+
+  .productos-grid-tienda {
+    grid-template-columns: 1fr;
+  }
+
+  .tipo-nombre-cliente {
+    font-size: 1.4rem;
+  }
+
+  .tipo-icono-cliente {
+    font-size: 3rem;
+  }
+}
