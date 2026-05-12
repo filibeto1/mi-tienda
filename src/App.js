@@ -102,37 +102,40 @@ const AppContent = () => {
     </div>
   );
 
-  const ClienteHeader = () => (
-    <div style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      background: 'linear-gradient(135deg, #0a0a0a, #1a1a1a)',
-      padding: '10px 20px',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      zIndex: 1000,
-      borderBottom: '1px solid #ff6600'
-    }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-        <img 
-          src="/AngelR.png"
-          alt="Angel Rodriguez" 
-          style={{
-            width: '45px',
-            height: '45px',
-            borderRadius: '50%',
-            objectFit: 'cover',
-            border: '2px solid #ff6600'
-          }}
-          onError={(e) => e.target.src = 'https://via.placeholder.com/45?text=AR'}
-        />
-        <h1 style={{ margin: 0, color: '#ff6600', fontSize: '1.5rem' }}>Angel Rodriguez</h1>
-      </div>
+// Header para CLIENTE (con AR Tienda)
+const ClienteHeader = () => (
+  <div style={{
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    background: 'linear-gradient(135deg, #0a0a0a, #1a1a1a)',
+    padding: '10px 20px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 1000,
+    borderBottom: '1px solid #ff6600'
+  }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+      <img 
+        src="/AngelR.png"
+        alt="AR Tienda" 
+        style={{
+          width: '45px',
+          height: '45px',
+          borderRadius: '50%',
+          objectFit: 'cover',
+          border: '2px solid #ff6600'
+        }}
+        onError={(e) => {
+          e.target.src = 'https://via.placeholder.com/45?text=AR';
+        }}
+      />
+      <h1 style={{ margin: 0, color: '#ff6600', fontSize: '1.8rem' }}>AR Tienda</h1>
     </div>
-  );
+  </div>
+);
 
   return (
     <div>
